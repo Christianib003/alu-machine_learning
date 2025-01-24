@@ -1,18 +1,19 @@
 #!/usr/bin/env python3
-
-"""
-This is a function to add arrays
-"""
+'''
+Module that adds two arrays
+'''
 
 
 def add_arrays(arr1, arr2):
-    """
-    This is to add arrays
-    """
-    sum = []
-    if(len(arr1) != len(arr2)):
-        return None
-    for i in range(len(arr1)):
-        sum.append(arr1[i] + arr2[i])
+    '''
+    Returns a new array that adds two other arrays together
+    '''
+    n1 = len(arr1)
+    n2 = len(arr2)
+    result = []
 
-    return sum
+    if n1 == n2:
+        for i in range(n1):
+            result.append(arr1[i] + arr2[i])
+        return result
+    return None

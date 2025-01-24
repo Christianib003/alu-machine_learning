@@ -1,37 +1,24 @@
 #!/usr/bin/env python3
+'''
+Defines a function that adds two two-dimensional arrays
+'''
 
-""""
-This is module for 
-adding matrices
-"""
-
-
-def check_shape(arr):
-    shape_arr = []
-
-    while(isinstance(arr,list)):
-        shape_arr.append(len(arr))
-        arr = arr[0]
-    
-    return shape_arr
 
 def add_matrices2D(mat1, mat2):
+    '''
+    Returns a new array that adds two other two-dimesional arrays
+    '''
+    r1 = len(mat1)
+    c1 = len(mat1[0])
+    r2 = len(mat2)
+    c2 = len(mat2[0])
 
-    """"
-    This is for addition
-    """
+    if r1 == r2 and c1 == c2:
+        matrix = [[None for _ in range(c1)] for _ in range(r1)]
+        for r in range(r1):
+            for c in range(c1):
+                matrix[r][c] = mat1[r][c] + mat2[r][c]
 
+        return matrix
 
-    sum = []
-
-    if(check_shape(mat1) != check_shape(mat2)):
-        return None
-    
-    for i in range(len(mat1)):
-        sum_row = []
-        for j in range(len(mat1)):
-            sum_row.append(mat1[i][j] + mat2[i][j])
-        
-        sum.append(sum_row)
-
-    return sum
+    return None
